@@ -4,13 +4,13 @@
 - Проверить что все корректно собирается и запускается и что в конфигурации вебпака нет непонятных мест и неизвестно-что-делающих плагинов или лоадеров.
 
 При сборке должна открываться хотя бы страница логина:
--[] react 18
--[] @ionic/react
+- react 18
+- @ionic/react
 
 Настроить:
--[] Webpack 5
--[] Webpack-dev-server 4
--[] Typescript
--[] Scss
--[] Browserlist/Autoprefixer (потребуется postcss-loader)
--[] Обработка шрифтов и изображений через asset management.
+- Webpack 5
+- Webpack-dev-server 4
+- Typescript
+- Scss
+- Browserlist/Autoprefixer (потребуется postcss-loader)
+- Обработка шрифтов и изображений через asset management.
