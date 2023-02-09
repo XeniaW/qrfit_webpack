@@ -5,6 +5,6 @@ export class Component {
     }
   
     hello(): void {
-      console.log('Hello!');
+      console.log('Sup!');
     }
   }

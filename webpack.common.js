@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 
@@ -24,6 +25,8 @@ module.exports = {
         static: path.join(__dirname, 'dist'),
         open: true,
         port: 3000,
+        historyApiFallback: true,
+       
     },
     module: {
         rules: [
@@ -38,6 +41,8 @@ module.exports = {
                   }
                 }
               },
+              { test: /.html$/, loader: "html-loader", },
+             
               {
                 test: /\.(scss|css)$/,
                 use: [
@@ -50,8 +55,10 @@ module.exports = {
                     options: {
                       sourceMap: true
                     }
-                  }
-                ]
+                  },
+                  'postcss-loader',
+                ],
+                
               }
         ]
     },
@@ -69,5 +76,6 @@ module.exports = {
             exclude: 'node_modules',
             context: 'src'
          }),
+         new HtmlWebpackPlugin({ template: "src/index.html", }),
      ]
 };
