@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   mode: 'development',
   devtool: 'source-map',
   resolve: {
@@ -38,7 +38,7 @@ module.exports = {
                   options: {
                     // disable type checker
                     transpileOnly: true
-                  }
+                  },
                 }
               },
               { test: /.html$/, loader: "html-loader", },
@@ -67,11 +67,16 @@ module.exports = {
               {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
               },
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js', '.jsx']
       },
     
       plugins: [
@@ -85,5 +90,6 @@ module.exports = {
             context: 'src'
          }),
          new HtmlWebpackPlugin({ template: "src/index.html", }),
-     ]
+     ],
+  
 };
