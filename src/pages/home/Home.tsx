@@ -1,22 +1,26 @@
 import React from 'react';
 import { IonRow,IonCol, IonContent,IonButton, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import HomePageImg from '../../assets/img/sil.png';
+import { useTranslation } from "react-i18next";
+
 import './Home.scss';
 
 
 const Home: React.FC = () => {
-  
+const { t } = useTranslation();
+
   return (
     <IonPage> 
-      <IonContent fullscreen>       
+      <IonContent  fullscreen>       
         <IonHeader>
           <IonToolbar>
-            <IonTitle size="large">Welcome to FitAssist!</IonTitle>
+            <IonTitle size="large">{t('Welcome to QRFit')}</IonTitle>
           </IonToolbar>
         </IonHeader>
  
-          <IonRow>
+          <IonRow className="bg">
             <IonCol className="ion-padding-top">
-            <img src='./assets/img/sil.png' alt={"MainImage"} />
+            <img src={HomePageImg} alt={"MainImage"} />
             </IonCol>    
           </IonRow>
           <IonRow>

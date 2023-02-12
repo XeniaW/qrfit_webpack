@@ -6,7 +6,7 @@
   "scripts": {
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "serve": "./node_modules/.bin/webpack serve"
   },
   "keywords": [],
@@ -15,23 +15,27 @@
   "dependencies": {
     "@ionic/react": "^6.5.3",
     "@ionic/react-router": "^6.5.3",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "autoprefixer": "^10.4.13",
-    "browserslist": "^4.21.5",
     "dom": "^0.0.3",
-    "eslint-webpack-plugin": "^4.0.0",
+    "i18next": "^22.4.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
+    "@types/i18n": "^0.13.6",
     "@types/jest": "^29.4.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
+    "browserslist": "^4.21.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
+    "eslint-webpack-plugin": "^4.0.0",
     "file-loader": "^6.2.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
