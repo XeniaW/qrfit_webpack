@@ -14,3 +14,10 @@
 - Scss
 - Browserlist/Autoprefixer (потребуется postcss-loader)
 - Обработка шрифтов и изображений через asset management.
+
+
+### 26.03.23
+
+- Stylelint настройки
+    - зачем настраивать EDV под это  -> https://bzvyagintsev.ru/blog/stylelint/
+    - Команды для запуска - npm run stylelint -> https://github.com/stylelint/stylelint/issues/4178

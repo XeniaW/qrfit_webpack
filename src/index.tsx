@@ -1,11 +1,12 @@
 import React from 'react';
 import { StrictMode } from "react";
+
 import { createRoot } from "react-dom/client";
 import i18n from "i18next" ;
 import { initReactI18next } from "react-i18next";
 
-import En from "./locales/en/translations.json";
-import De from "./locales/de/translations.json";
+import en from "./locales/en/translations.json";
+import de from "./locales/de/translations.json";
 
 import App from './App';
 
@@ -19,10 +20,10 @@ const root = createRoot(rootElement);
 
 export const resources = {
   en: {
-    translation: En
+    translation: en
   },
   de: {
-    translation: De
+    translation: de
   }
 } as const;
 

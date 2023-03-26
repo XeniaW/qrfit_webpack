@@ -1,28 +1,19 @@
 // import the original type declarations
 import 'react-i18next';
 // import all namespaces (for the default language, only)
-import En from "locales/en/translations.json";
-import De from "locales/de/translations.json";
+import en from "locales/en/translations.json";
+import de from "locales/de/translations.json";
 
-
-// react-i18next versions lower than 11.11.0
-declare module 'react-i18next' {
-  // and extend them!
-  interface Resources {
-    En: typeof En;
-    De: typeof De;
-  }
-}
-// react-i18next versions higher than 11.11.0
-declare module 'react-i18next' {
-  // and extend them!
+declare module "i18next" {
+  // Extend CustomTypeOptions
   interface CustomTypeOptions {
-    // custom namespace type if you changed it
-    defaultNS: 'De';
+    // custom namespace type, if you changed it
+    defaultNS: "en";
     // custom resources type
     resources: {
-        En: typeof En;
-        De: typeof De;
+      en: typeof en;
+      de: typeof de;
     };
+    // other
   }
 }
