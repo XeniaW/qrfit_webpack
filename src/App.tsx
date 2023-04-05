@@ -38,7 +38,7 @@ import { auth } from './services/firebase';
 
 setupIonicReact();
 
-const App: React.FC = (props) => {
+const App: React.FC = () => {
 
   const [authState, setAuthState] = useState({loading:true, loggedIn:false});
   useEffect(() => {

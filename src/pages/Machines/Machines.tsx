@@ -10,12 +10,16 @@ const MachineList: React.FC = () => {
   const [machines, setMachines] = useState<any[]>([]);
   const machineRef = collection(firestore, "machines");
 
+
+  const getMachines = async () => {
+    const data = await getDocs(machineRef);
+    return data.docs.map((doc)=> ({...doc.data(), id: doc.id}))
+ };
+
   useEffect(() => {
-      const getMachines = async () => {
-        const data = await getDocs(machineRef);
-        setMachines(data.docs.map((doc)=> ({...doc.data(), id: doc.id})))
-     };
-     getMachines();
+     getMachines().then((res)=> {
+      setMachines(res);
+    });
   }, []);
 
   return (
